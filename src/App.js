@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./componets/login/Login";
+import Logout from "./componets/logouts/Logout";
+import Navbar from "./componets/Navbar/Navbar";
+import AboutUs from "./componets/aboutus/AboutUs";
+import Product from "./componets/products/Product";
+import Cart from "./componets/cartitems/Cart";
+import AddItems from "./componets/additems/AddItems"
+// import Logout from "./componets/Logout";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <BrowserRouter>
+    <div>
+
+     <Navbar />
+      <Routes>
+        <Route>
+          <Route path="/" element={<Navigate to="login"/>} />
+          <Route path="login" element={<Login/>} />
+          <Route path="logout" element={<Logout/>} />
+          <Route path="about" element={<AboutUs/>} />
+          <Route path="Products" element={<Product />} />
+          <Route path="cartItem" element={<Cart/>} />
+          <Route path="additems" element={<AddItems/>} />
+        </Route>
+      </Routes>
     </div>
+   </BrowserRouter>
   );
 }
 

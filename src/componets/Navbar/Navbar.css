@@ -1,0 +1,21 @@
+.nav-links ul{
+    display: flex;
+    font: monospace;
+    justify-content: space-around;
+    text-decoration: none;
+    background-color: rgb(189, 12, 12);
+    color: white;
+    list-style: none;
+    cursor: pointer;
+    margin-top: 0;
+    padding-top: 16px;
+}
+.nav-links ul li:hover{
+    color: orange;
+    text-decoration: none;
+
+}
+.title{
+    margin-top: -16px;
+    margin-left: 16px;
+}
