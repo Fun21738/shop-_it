@@ -1,0 +1,29 @@
+.product--data{
+    display: flex;
+    /* flex-direction:column; */
+    /* justify-content: center; */
+    width: 90%;
+    height:100% ;
+    border: 1px solid red;
+    margin: auto;
+
+    /* height: auto; */
+}
+.product--card{
+    width: 40%;
+    height: 90%;
+    border: 1px solid blue;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+img{
+    width: 70%;
+    height: 40%;
+    justify-items: center;
+}
+.doc{
+    width: 60%;
+    font-size: 12px;
+    height: 40%;
+}
