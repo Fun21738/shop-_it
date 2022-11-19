@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import Navbar from '../Navbar/Navbar'
 // import { Link } from 'react-router-dom'
 import {addProduct}  from "../../redux/slice/ProductSlice"
 import { useDispatch } from "react-redux"; 
-// import "./Login.css"
+import "./additems.css"
 export default function AddItems() {
     const dispatch = useDispatch();
 
@@ -51,16 +52,20 @@ export default function AddItems() {
       }
     };
     return (
+      <div>
+        <Navbar/>
+ <div className='fom'>
+
       <section className="form-control">
         <form>
-          <h2>Add a New Product</h2>
+          <h3>Add a New Product</h3>
           <input
             type="text"
             id="productTitle"
             name="productTitle"
             value={title}
             onChange={onTitleChanged}
-            placeholder="Product Title"
+            placeholder="Product name"
           />
           <textarea
             id="productDesription"
@@ -70,7 +75,7 @@ export default function AddItems() {
             placeholder="Description"
           />
           <input
-            type="file"
+            type="url"
             id="productImage"
             name="productImage"
             value={image}
@@ -83,7 +88,7 @@ export default function AddItems() {
             name="productPrice"
             value={price}
             onChange={onPriceChanged}
-            placeholder="Product Price In Kenya Shillings"
+            placeholder=" Price In KShs"
           />
           <input
             type="text"
@@ -103,6 +108,9 @@ export default function AddItems() {
           </button>
         </form>
       </section>
+      
+    </div>  
+    </div>
     );
 //  const
 //   return (

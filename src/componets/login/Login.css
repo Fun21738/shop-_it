@@ -18,3 +18,20 @@ input{
     border-right: none;
     border-bottom: 1px solid black;
 }
+.add-btn2{
+    background-color: rgb(167, 18, 18);
+    cursor: pointer;
+    color: white;
+    border: none;
+    width: 130px;
+    border-radius: 3px;
+    justify-items: center;
+    /* align-items: center; */
+    margin-left: 100px;
+}
+.add-btn:hover{
+    background-color: rgb(224, 125, 125);
+}
+.add-btn2,link{
+    text-decoration: none;
+}

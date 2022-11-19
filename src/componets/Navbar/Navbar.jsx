@@ -10,21 +10,21 @@ function Navbar() {
           <h1 className="title">shop-it</h1>
         </li>
         <li>
-          <Link to="products">product</Link>
+          <Link to="/products">product</Link>
         </li>
         <li>
-          <Link to="about">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="additems">AddItem</Link>
+          <Link to="/additems">AddItem</Link>
         </li>
         <li>
-          <Link to="login">logout</Link>
+          <Link to="/login">logout</Link>
         </li>
         
         <li>
             <div className="counter">
-            <Link to="cartItem">
+            <Link to="/cartItem">
               <TfiShoppingCartFull />
                <span>o</span>
             </Link>
