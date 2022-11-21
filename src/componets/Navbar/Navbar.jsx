@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import "./Navbar.css";
+import { useSelector } from 'react-redux';
 function Navbar() {
+  const { cart } = useSelector((state) => state.cart)
   return (
     <div className="nav-links">
       <ul>
@@ -26,7 +28,9 @@ function Navbar() {
             <div className="counter">
             <Link to="/cartItem">
               <TfiShoppingCartFull />
-               <span>o</span>
+               <span>
+                {cart.length}
+               </span>
             </Link>
             </div>
        

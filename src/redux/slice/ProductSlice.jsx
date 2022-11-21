@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const url = "https://shop-it-d258b-default-rtdb.firebaseio.com/products.json";
-const initialState = { products: [], status: "idle", error: "null", cart: [] };
+const initialState = { products: [], status: "idle", error: "null",  };
 
 
 export const addProduct = createAsyncThunk(
