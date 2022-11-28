@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: o;
+    
+}
+.cart-container{
+    display: flex;
+    margin-top: 16px;
+    
+}

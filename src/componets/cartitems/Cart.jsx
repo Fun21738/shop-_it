@@ -1,11 +1,39 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector ,useDispatch } from "react-redux";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import "./Cart.css"
+import { getTotals, removeFromCart  ,decreaseCart , increasecart,clearCart} from "../../redux/slice/CartSlice";
 // import {  useSelector } from "react-redux";
 function Cart() {
   const cart = useSelector((state) => state.cart);
   console.log(cart)
+const dispatch=useDispatch()
+
+useEffect(()=>{
+dispatch(getTotals()) 
+},[cart ,dispatch]);
+
+const handleRemoveFromCart =(cart)=>{
+  console.log(cart);
+dispatch(removeFromCart(cart));
+}
+
+const handleDecreaseFromCart= (cart)=>{
+dispatch(decreaseCart(cart));
+};
+
+const handleIncreaseCart= (cart)=>{
+  dispatch(increasecart(cart));
+  }
+
+  const handleClearFromCart= ()=>{
+    dispatch(clearCart());
+    }
+
+
+
   return (
     <div>
       <Navbar />
@@ -40,14 +68,14 @@ function Cart() {
                       <h3>{cartItem.title}</h3>
                       <p>{cartItem.body}</p>
                       <p>{cartItem.discountRate}</p>
-                      <button>Remove</button>
+                      <button onClick={()=>handleRemoveFromCart(cartItem)}>Remove</button> 
                     </div>
                   </div>
                   <div className="product-price">{cartItem.price}</div>
                   <div className="product-quantity">
-                    <button>+</button>
+                    <button onClick={()=>handleDecreaseFromCart(cartItem)}>-</button>
                     <div className="conter">${cartItem.CartQuantity}</div>
-                    <button>-</button>
+                    <button onClick={()=>handleIncreaseCart(cartItem)}>+</button>
                   </div>
                   <div className="total-price">
                     ${cartItem.price * cartItem.CartQuantity}
@@ -56,7 +84,7 @@ function Cart() {
               ))}
             </div>
             <div className="cart-summary">
-              <button className="clear-cart"></button>
+              <button className="clear-cart" onClick={()=>handleClearFromCart()}>Clear all your cart items</button>
               <div className="cart-checkout">
                 <span>Subtotal</span>
                 <span className="amount">${cart.cartTotalAmount}</span>
